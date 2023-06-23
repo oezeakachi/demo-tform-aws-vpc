@@ -16,4 +16,3 @@ module "ec2" {
   sg_priv_id = module.networking.sg_priv_id
   key_name   = module.ssh-key.key_name
 }
-
