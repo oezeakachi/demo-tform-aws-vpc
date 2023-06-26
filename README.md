@@ -1,8 +1,8 @@
 # AWS VPC Creation with Terraform
-This project will create a VCP with Internet Gateway, subnets accross 2 AZs: one public
+This project will create a VPC with Internet Gateway, subnets accross 2 AZs: one public
 and one one private.
 
-From there terraform will deploy a bastion host in the public subnet in AZ1 and a second host
+From there terraform will deploy 3 bastion hosts in the public subnet in AZ1 and 3 more hosts
 in the private subnet in AZ2, which can connect to the internet via a NAT gateway created
 as part of the VPC.
 
@@ -27,7 +27,7 @@ Modules:
 
 - ssh-key: Generates an ssh key pair
 - network: Sets up a VPC with IGWs, NAT GWs, 2 public subnets, 2 private subnets, SG to SSH in from anywhere
-- ec2: Currently creates a bastian ec2 instance in a public subnet and a ec2 instance in a private subnet
+- ec2: Currently creates bastion ec2 instance in a public subnet and a ec2 instance in a private subnet
 - each subnet is in a different AZ
 - private key is copied over to the bastion ec2 instance so it can ssh into the private subnet
 - ec2 in private subnet has outgoing network access though the NAT gateway
